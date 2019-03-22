@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import M from 'materialize-css'
 
 export default class Nav extends Component {
@@ -14,26 +14,29 @@ export default class Nav extends Component {
 		return (
 			<div className="navbar-fixed" style={{ height: 0 }}>
 				<nav className="white">
-					<div className="nav-wrapper">
-						<Link to="/" id="logo-container" className="brand-logo">Logo</Link>
-						<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-						<ul className="right hide-on-med-and-down">
-							<li>
-								<Link to="/login">Login</Link>
-							</li>
-							<li>
-								<Link to="/signup">Signup</Link>
-							</li>
-						</ul>
-						<ul id="nav-mobile" className="sidenav">
-							<li>
-								<Link to="/login">Login</Link>
-							</li>
-							<li>
-								<Link to="/signup">Signup</Link>
-							</li>
-						</ul>
-					</div>
+						<div className="nav-wrapper">
+							<Router>
+								<Link to="/" id="logo-container" className="brand-logo">Logo</Link>
+								<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+								<ul className="right hide-on-med-and-down">
+									<li>
+										<Link to="/login">Login</Link>
+									</li>
+									<li>
+										<Link to="/signup">Signup</Link>
+									</li>
+								</ul>
+								<ul id="nav-mobile" className="sidenav">
+									<li>
+										<Link to="/login">Login</Link>
+									</li>
+									<li>
+										<Link to="/signup">Signup</Link>
+									</li>
+								</ul>
+							</Router>
+
+						</div>
 				</nav>
 			</div>
 		)
