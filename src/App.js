@@ -16,7 +16,8 @@ class App extends Component {
           <Route exact key="Home" path="/" component={Home}/>
           <Route exact key="Login" path="/login" component={Login}/>
           <Route exact key="AddReport" path="/reports/new" component={AddReport} />
-          <Route exact key="Reports" path="/reports" component={Reports}/>
+          <Route exact key="Reports" path="/reports" component={Reports} />
+          <Route exact key="Tags" path="/reports/:tag" component={Reports}/>
         </HashRouter>
       </div>
      

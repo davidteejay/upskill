@@ -19,7 +19,7 @@ export default class AddReport extends Component {
 			description: '',
 			anonymous: false,
 			sector: '',
-			sectors: ['Education', 'Power']
+			sectors: ['Education', 'Security', 'Health', 'Agriculture', 'Infrasctructure', 'Power', 'Banking and Finance', 'Legal Issues', 'Telecommunication', 'Transportation']
 		}
 	}
 
