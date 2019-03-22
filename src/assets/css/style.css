@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+body, html, body #root, body #root .App, body #root .App .wrapper, html #root, html #root .App, html #root .App .wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: fit-content; }
+
+body, html {
+  color: #000;
+  background-color: #f3f3f3; }
+  body *, html * {
+    font-family: 'Open Sans', Roboto, sans-serif !important; }
+  body *.shadowed, html *.shadowed {
+    box-shadow: rgba(0, 0, 0, 0.098) 0px 4px 14px !important; }
+  body .valign, html .valign {
+    width: 100%; }
+
+.navbar-fixed {
+  height: 60px; }
+  .navbar-fixed nav {
+    padding: 0 30px;
+    height: 60px; }
+    .navbar-fixed nav .nav-wrapper {
+      height: 100%;
+      width: 100%; }
+      .navbar-fixed nav .nav-wrapper ul {
+        height: 100%; }
+        .navbar-fixed nav .nav-wrapper ul li {
+          background-color: transparent !important;
+          height: 100%;
+          line-height: 60px;
+          padding: 0 5px; }
+          .navbar-fixed nav .nav-wrapper ul li a {
+            display: inline-block;
+            height: 30px;
+            width: fit-content;
+            padding: 0 20px;
+            line-height: 30px;
+            border: 1px solid #000;
+            color: #000;
+            border-radius: 5px;
+            background-color: transparent;
+            transition: all .5s; }
+            .navbar-fixed nav .nav-wrapper ul li a:hover {
+              background-color: #000;
+              color: #fff; }
+
+.add-report > .valign-wrapper {
+  width: 100%;
+  height: calc(100% - 60px);
+  min-height: fit-content;
+  padding: 30px; }
+  .add-report > .valign-wrapper .add-report-form {
+    width: 75%;
+    border-radius: 5px;
+    padding: 50px;
+    background-color: #fff;
+    margin: 0 auto; }
+    @media screen and (max-width: 992px) {
+      .add-report > .valign-wrapper .add-report-form {
+        width: 90%; } }
+    @media screen and (max-width: 600px) {
+      .add-report > .valign-wrapper .add-report-form {
+        width: 100%;
+        padding: 30px; } }
+    .add-report > .valign-wrapper .add-report-form h4 {
+      margin-top: 0; }
+    .add-report > .valign-wrapper .add-report-form .row {
+      margin: 0; }
+      .add-report > .valign-wrapper .add-report-form .row .input-container {
+        margin: 5px 0;
+        padding: 0; }
+        .add-report > .valign-wrapper .add-report-form .row .input-container label:not(.checkbox-label) {
+          font-size: 15px;
+          color: #000; }
+        .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]), .add-report > .valign-wrapper .add-report-form .row .input-container select, .add-report > .valign-wrapper .add-report-form .row .input-container textarea {
+          border: 1px solid #666 !important;
+          border-radius: 3px;
+          outline: none;
+          box-shadow: none !important;
+          padding: 0 10px;
+          margin: 10px 0;
+          width: 100%;
+          box-sizing: border-box; }
+          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]).placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select.placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea.placeholder {
+            color: #666; }
+          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]):-moz-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select:-moz-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea:-moz-placeholder {
+            color: #666; }
+          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox])::-webkit-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select::-webkit-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea::-webkit-input-placeholder {
+            color: #666; }
+          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]):-ms-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select:-ms-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea:-ms-input-placeholder {
+            color: #666; }
+        .add-report > .valign-wrapper .add-report-form .row .input-container textarea {
+          min-height: 100px;
+          padding: 10px;
+          resize: none; }
+
+/*# sourceMappingURL=style.css.map */

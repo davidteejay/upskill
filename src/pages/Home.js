@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import Nav from '../components/Nav'
 import Preloader from '../components/Preloader'
+import { API_URL } from '../config/constants'
 
 export default class Home extends Component {
 	constructor(props){
@@ -11,9 +13,10 @@ export default class Home extends Component {
 			loading: false
 		}
 	}
+
 	render(){
 		return (
-			<div>
+			<div className="wrapper">
 				<Nav/>
 				<Preloader loading={this.state.loading} />
 			</div>

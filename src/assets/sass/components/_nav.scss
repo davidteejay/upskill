@@ -1,0 +1,42 @@
+.navbar-fixed {
+  height: 60px;
+
+  nav {
+    padding: 0 30px;
+    height: 60px;
+
+    .nav-wrapper {
+      height: 100%;
+      width: 100%;
+
+      ul {
+        height: 100%;
+
+        li {
+          background-color: transparent !important;
+          height: 100%;
+          line-height: 60px;
+          padding: 0 5px;
+
+          a {
+            display: inline-block;
+            height: 30px;
+            width: fit-content;
+            padding: 0 20px;
+            line-height: 30px;
+            border: 1px solid $accent;
+            color: $accent;
+            border-radius: 5px;
+            background-color: transparent;
+            transition: all .5s;
+
+            &:hover {
+              background-color: $accent;
+              color: #fff
+            }
+          }
+        }
+      }
+    }
+  }
+}

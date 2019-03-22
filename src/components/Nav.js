@@ -12,8 +12,8 @@ export default class Nav extends Component {
 
 	render(){
 		return (
-			<div className="navbar-fixed" style={{ height: 0 }}>
-				<nav className="white">
+			<div className="navbar-fixed">
+				<nav className="white shadowed">
 					<div className="nav-wrapper">
 						<Link to="/" id="logo-container" className="brand-logo">Logo</Link>
 						<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
