@@ -12,31 +12,28 @@ export default class Nav extends Component {
 
 	render(){
 		return (
-			<div className="navbar-fixed" style={{ height: 0 }}>
-				<nav className="white">
-						<div className="nav-wrapper">
-							<Router>
-								<Link to="/" id="logo-container" className="brand-logo">Logo</Link>
-								<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-								<ul className="right hide-on-med-and-down">
-									<li>
-										<Link to="/login">Login</Link>
-									</li>
-									<li>
-										<Link to="/signup">Signup</Link>
-									</li>
-								</ul>
-								<ul id="nav-mobile" className="sidenav">
-									<li>
-										<Link to="/login">Login</Link>
-									</li>
-									<li>
-										<Link to="/signup">Signup</Link>
-									</li>
-								</ul>
-							</Router>
-
-						</div>
+			<div className="navbar-fixed">
+				<nav className="white shadowed">
+					<div className="nav-wrapper">
+						<Link to="/" id="logo-container" className="brand-logo">Logo</Link>
+						<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+						<ul className="right hide-on-med-and-down">
+							<li>
+								<Link to="/login">Login</Link>
+							</li>
+							<li>
+								<Link to="/signup">Signup</Link>
+							</li>
+						</ul>
+						<ul id="nav-mobile" className="sidenav">
+							<li>
+								<Link to="/login">Login</Link>
+							</li>
+							<li>
+								<Link to="/signup">Signup</Link>
+							</li>
+						</ul>
+					</div>
 				</nav>
 			</div>
 		)

@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import axios from 'axios'
 
 import axios from 'axios';
 import Nav from '../components/Nav'
 import Preloader from '../components/Preloader'
+import { API_URL } from '../config/constants'
 
 export default class Home extends Component {
 	constructor(props){
@@ -13,23 +15,10 @@ export default class Home extends Component {
 		}
 	}
 
-	onNavClick(){
-		this.setState({ loading : true})
-		axios.get('')
-		.then(
-			res => console.log(res)
-		)
-		.catch(
-			err => err
-		)
-		.finally(
-			this.setState({ loading : false})
-		)
-	}
 	render(){
 		return (
-			<div>
-				<Nav onNavClick={this.onNavClick}/>
+			<div className="wrapper">
+				<Nav/>
 				<Preloader loading={this.state.loading} />
 			</div>
 		)
