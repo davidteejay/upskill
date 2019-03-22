@@ -1,38 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import './App.css';
+import { HashRouter, Route } from 'react-router-dom'
+
+import 'materialize-css/dist/css/materialize.min.css'
+
+import Home from './pages/Home'
+import Login from './pages/Login'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          <nav className="white" role="navigation">
-            <div className="nav-wrapper container">
-
-              <Link to="" id="logo-container" href="#" className="brand-logo">Logo</Link>
-              <ul className="right hide-on-med-and-down">
-                <li>
-                  <Link to="#">Login</Link>
-                </li>
-                <li>
-                  <Link to="#">Signup</Link>
-                </li>
-              </ul>
-
-              <ul id="nav-mobile" className="sidenav">
-                <li>
-                    <Link to="#">Login</Link>
-                </li>
-                <li>
-                    <Link to="#">Signup</Link>
-                </li>
-              </ul>
-              <a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-            </div>
-          </nav>
-          
-        </Router>
+        <HashRouter>          
+          <Route exact key="Home" path="/" component={Home}/>
+          <Route exact key="Login" path="/login" component={Login}/>
+        </HashRouter>
       </div>
      
     );
