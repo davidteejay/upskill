@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom'
-
 import 'materialize-css/dist/css/materialize.min.css'
 import './assets/css/style.css'
 
