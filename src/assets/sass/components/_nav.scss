@@ -20,19 +20,35 @@
 
           a {
             display: inline-block;
-            height: 30px;
+            height: 25px;
             width: fit-content;
-            padding: 0 20px;
-            line-height: 30px;
-            border: 1px solid $accent;
-            color: $accent;
+            padding: 0 15px;
+            line-height: 23px;
+            border: 1px solid $accent2;
+            color: $accent2;
             border-radius: 5px;
             background-color: transparent;
             transition: all .5s;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font: {
+              weight: 300;
+              size: 13px;
+            }
 
             &:hover {
-              background-color: $accent;
+              background-color: $accent2;
               color: #fff
+            }
+
+            &.signup {
+              border-color: $accent1;
+              color: $accent1;
+
+              &:hover {
+                background-color: $accent1;
+                color: #fff;
+              }
             }
           }
         }
