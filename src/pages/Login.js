@@ -31,23 +31,27 @@ export default class Login extends Component {
 			.post(`${API_URL}/auth/login`, {
 				email,
 				password
-		})
-		.then(res => {
-			res = res.data
+			})
+			.then(res => {
+				res = res.data
 
-			if (res.error) M.toast({ html: `<span>${res.message}</span>` })
-			else {
-				sessionStorage.setItem('userData', JSON.stringify(res.data))
-				this.props.history.push('/reports')
-			}
-		})
-		.catch(err => console.error(err))
-		.finally(() => this.setState({ loading: true }))
-	}
+				if (res.error) M.toast({ html: `<span>${res.message}</span>` })
+				else {
+					sessionStorage.setItem('userData', JSON.stringify(res.data))
+					this.props.history.push('/reports')
+				}
+			})
+			.catch(err => {
+				console.error(err)
+				M.toast({ html: `<span>Something went wrong</span>` })
+			})
+			.finally(() => this.setState({ loading: true }))
+		}
 
 	inputChange(e){
 		this.setState({ email : e.target.value})
 	}
+	
 	passwordChange(e){
 		this.setState({
 			password : e.target.value
