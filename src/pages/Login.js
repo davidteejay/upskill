@@ -24,6 +24,9 @@ export default class Home extends Component {
 	}
 
 	submitForm(){
+		this.setState({
+			loading : true,
+		})
 		Axios.post(`${API_URL}/auth/login`, ({
 			email : this.state.email,
 			password : this.state.password
