@@ -35,11 +35,14 @@ export default class Reports extends Component {
 					console.log(res.message)
 					M.toast({ html: '<span>Something went wrong</span>' })
 				} else {
-					const { tag } = this.props.match.params
+					const { tag, category } = this.props.match.params
 					let reports = []
 					
 					if (tag) reports = res.data.filter(report => {
 						return report.tags.includes('#' + tag)
+					}) 
+					else if (category) reports = res.data.filter(report => {
+						return report.sector.toLowerCase() === category.replace(/-/g, ' ')
 					}) 
 					else reports = res.data
 

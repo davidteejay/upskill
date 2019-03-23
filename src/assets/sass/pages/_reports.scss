@@ -80,15 +80,38 @@
 
 			.report-container {
 				padding: 20px;
+
+				.comment {
+					padding: 10px 0;
+					border: {
+						top: 1px solid #ccc;
+						bottom: 1px solid #ccc;
+					}
+				}
 			}
 
 			&.single:hover {
 				box-shadow: rgba(0, 0, 0, 0.098) 0px 16px 26px !important;
 			}
 
+			.title {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
 			h4 {
 				margin-top: 0;
 				font-weight: 300;
+				flex: .8;
+			}
+
+			.title h6 {
+				flex: .2;
+				color: $accent2;
+				text-transform: capitalize;
+				text-align: right;
+				font-weight: 500;
 			}
 
 			.tags {
@@ -128,12 +151,12 @@
 					}
 
 					.badge {
-						height: 30px;
-						width: 30px;
-						min-width: 30px;
+						height: 25px;
+						width: 25px;
+						min-width: 20px;
 						padding: 0;
 						text-align: center;
-						line-height: 30px;
+						line-height: 25px;
 						border-radius: 50%;
 					}
 				}

@@ -22,20 +22,26 @@ body, html {
     .navbar-fixed nav .nav-wrapper {
       height: 100%;
       width: 100%; }
+      .navbar-fixed nav .nav-wrapper a.brand-logo {
+        color: #5015b2;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px; }
       .navbar-fixed nav .nav-wrapper ul {
         height: 100%; }
         .navbar-fixed nav .nav-wrapper ul li {
           background-color: transparent !important;
           height: 100%;
           line-height: 60px;
-          padding: 0 5px; }
+          padding: 0px;
+          display: flex;
+          align-items: center; }
           .navbar-fixed nav .nav-wrapper ul li a, .navbar-fixed nav .nav-wrapper ul li button {
             display: inline-block;
             height: 25px;
             width: fit-content;
-            padding: 0 15px;
+            padding: 0 10px;
             line-height: 23px;
-            border: 1px solid #5015b2;
             color: #5015b2;
             border-radius: 5px;
             background-color: transparent;
@@ -44,14 +50,10 @@ body, html {
             letter-spacing: 3px;
             font-weight: 300;
             font-size: 13px; }
-            .navbar-fixed nav .nav-wrapper ul li a:hover, .navbar-fixed nav .nav-wrapper ul li button:hover {
-              background-color: #5015b2;
-              color: #fff; }
-            .navbar-fixed nav .nav-wrapper ul li a.signup, .navbar-fixed nav .nav-wrapper ul li button.signup {
-              border-color: #ff0e3b;
-              color: #ff0e3b; }
-              .navbar-fixed nav .nav-wrapper ul li a.signup:hover, .navbar-fixed nav .nav-wrapper ul li button.signup:hover {
-                background-color: #ff0e3b;
+            .navbar-fixed nav .nav-wrapper ul li a.btn, .navbar-fixed nav .nav-wrapper ul li button.btn {
+              border: 1px solid #5015b2; }
+              .navbar-fixed nav .nav-wrapper ul li a.btn:hover, .navbar-fixed nav .nav-wrapper ul li button.btn:hover {
+                background-color: #5015b2;
                 color: #fff; }
 
 .aside .content {
@@ -59,6 +61,10 @@ body, html {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px; }
+  .aside .content h5 {
+    margin: 0; }
+  .aside .content a {
+    color: #000; }
 
 .add-report > .row {
   width: 100%;
@@ -175,11 +181,26 @@ body, html {
       background-color: rgba(255, 255, 255, 0.5); }
     .reports .col .report .report-container {
       padding: 20px; }
+      .reports .col .report .report-container .comment {
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc; }
     .reports .col .report.single:hover {
       box-shadow: rgba(0, 0, 0, 0.098) 0px 16px 26px !important; }
+    .reports .col .report .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
     .reports .col .report h4 {
       margin-top: 0;
-      font-weight: 300; }
+      font-weight: 300;
+      flex: .8; }
+    .reports .col .report .title h6 {
+      flex: .2;
+      color: #5015b2;
+      text-transform: capitalize;
+      text-align: right;
+      font-weight: 500; }
     .reports .col .report .tags {
       padding: 10px 0; }
       .reports .col .report .tags .tag {
@@ -205,12 +226,12 @@ body, html {
         .reports .col .report .report-footer div a {
           color: #fff; }
         .reports .col .report .report-footer div .badge {
-          height: 30px;
-          width: 30px;
-          min-width: 30px;
+          height: 25px;
+          width: 25px;
+          min-width: 20px;
           padding: 0;
           text-align: center;
-          line-height: 30px;
+          line-height: 25px;
           border-radius: 50%; }
     .reports .col .report .comment-box {
       padding: 10px 20px; }

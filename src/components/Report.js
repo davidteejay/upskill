@@ -54,6 +54,34 @@ export default class Report extends Component {
 		this.setState({ commentBox: !commentBox })
 	}
 
+	handleBackup(){
+		this.setState({ loading: true })
+		const { data } = this.state,
+			ngo = JSON.parse(sessionStorage.userData)
+
+		const backup = {
+			ngo,
+			user: data.userData,
+			report: data
+		}
+
+		axios
+			.post(`${API_URL}/reports/take`, backup)
+			.then(res => {
+				// console.log(res.data)
+				if (res.error) M.toast({ html: `<span>${res.message}</span>` })
+				else {
+					M.toast({ html: '<span>You have successfully backed up this report. Pleaase check your mail for further instrcutions</span>' })
+
+					let { data } = this.state
+					data.status = 'in-progress'
+					this.setState({ data })
+				}
+			})
+			.catch(err => console.log(err))
+			.finally(() => this.setState({ loading: false }))
+	}
+
 	componentDidMount(){
 		this.setState({ data: this.props.data })
 	}
@@ -65,7 +93,10 @@ export default class Report extends Component {
 			<div className="report single shadowed">
 				{this.state.loading && <div className="loading"/>}
 				<div className="report-container">
-					<h4>{data.title}</h4>
+					<div className="title">
+						<h4>{data.title}</h4>
+						<h6>{data.status && data.status.replace('-', ' ')}</h6>
+					</div>
 					<h6>Posted by {data.anonymous ? 'Anonymous User' : data.userData && `${data.userData.firstName} ${data.userData.lastName}`} | {data.sector} Sector | {new Date(data.createdAt).toDateString()}</h6>
 					<div className="tags">
 						{data.tags && data.tags.map((tag, i) => {
@@ -96,6 +127,10 @@ export default class Report extends Component {
 						<span className="material-icons"></span>
 						Share Report
 					</div>
+					{JSON.parse(sessionStorage.userData).type === 'ngo' && <div className="backup" onClick={this.handleBackup.bind(this)}>
+						<span className="material-icons"></span>
+						Back Report
+					</div>}
 				</div>
 				{this.state.commentBox && <div className="comment-box">
 					<textarea className="browser-default" id="comment" value={this.state.comment} onChange={this.handleComment.bind(this)} placeholder="Type your comment"></textarea>

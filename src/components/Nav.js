@@ -21,14 +21,20 @@ export default class Nav extends Component {
 			<div className="navbar-fixed">
 				<nav className="white shadowed">
 					<div className="nav-wrapper">
-						<Link to="/" id="logo-container" className="brand-logo">Logo</Link>
+						<Link to="/" id="logo-container" className="brand-logo">Inform&eacute;</Link>
 						<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 						<ul className="right hide-on-med-and-down">
 							<li>
-								{sessionStorage.userData ? (JSON.parse(sessionStorage.userData).type !== 'ngo' && <Link to="/new">Post Report</Link>) : <Link to="/login">Login</Link>}
+								<Link to="/">Home</Link>
 							</li>
 							<li>
-								{sessionStorage.userData ? <button onClick={this.handleLogout.bind(this)}>Logout</button> : <Link to="/signup">Signup</Link>}
+								<Link to="/reports">Reports</Link>
+							</li>
+							<li>
+								{sessionStorage.userData ? (JSON.parse(sessionStorage.userData).type !== 'ngo' && !window.location.hash.includes('new') && <Link className="btn z-depth-0" to="/new">Post Report</Link>) : <Link className="btn z-depth-0" to="/login">Login</Link>}
+							</li>
+							<li>
+								{sessionStorage.userData ? <button className="btn z-depth-0" onClick={this.handleLogout.bind(this)}>Logout</button> : <Link className="btn z-depth-0" to="/signup">Signup</Link>}
 							</li>
 						</ul>
 						{/* <ul id="nav-mobile" className="sidenav">
