@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 
 export default class Nav extends Component {
+	handleLogout(){
+		sessionStorage.clear()
+
+		this.props.history.push('/login')
+	}
+
 	componentDidMount(){
 		const sideNav = document.querySelectorAll('.sidenav')
 		const options = {}
@@ -19,20 +25,20 @@ export default class Nav extends Component {
 						<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 						<ul className="right hide-on-med-and-down">
 							<li>
+								{sessionStorage.userData ? (JSON.parse(sessionStorage.userData).type !== 'ngo' && <Link to="/new">Post Report</Link>) : <Link to="/login">Login</Link>}
+							</li>
+							<li>
+								{sessionStorage.userData ? <button onClick={this.handleLogout.bind(this)}>Logout</button> : <Link to="/signup">Signup</Link>}
+							</li>
+						</ul>
+						{/* <ul id="nav-mobile" className="sidenav">
+							<li>
 								<Link to="/login">Login</Link>
 							</li>
 							<li>
 								<Link to="/signup">Signup</Link>
 							</li>
-						</ul>
-						<ul id="nav-mobile" className="sidenav">
-							<li>
-								<Link to="/login">Login</Link>
-							</li>
-							<li>
-								<Link to="/signup">Signup</Link>
-							</li>
-						</ul>
+						</ul> */}
 					</div>
 				</nav>
 			</div>

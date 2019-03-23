@@ -4,6 +4,7 @@ import M from 'materialize-css'
 
 import Nav from '../components/Nav'
 import Preloader from '../components/Preloader'
+import Aside from '../components/Aside'
 import { API_URL } from '../config/constants'
 
 export default class AddReport extends Component {
@@ -61,12 +62,17 @@ export default class AddReport extends Component {
 		this.setState({ anonymous: !this.state.anonymous })
 	}
 
+	componentDidMount(){
+		if (!sessionStorage.userData) this.props.history.push('/login')
+	}
+
 	render(){
 		return (
 			<div className="wrapper add-report">
-				<Nav/>
-				<div className="valign-wrapper">
-					<form className="valign add-report-form shadowed" onSubmit={this.addReport}>
+				<Nav { ...this.props }/>
+				<div className="row">
+					<div className="col s12 m8">
+						<form className="add-report-form shadowed" onSubmit={this.addReport}>
 						<h4>Post New Report</h4>
 						<div className="row">
 							<div className="input-container col s12">
@@ -99,6 +105,8 @@ export default class AddReport extends Component {
 							</div>
 						</div>
 					</form>
+					</div>
+					<Aside/>
 				</div>
 				<Preloader loading={this.state.loading}/>
 			</div>

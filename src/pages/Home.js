@@ -17,7 +17,7 @@ export default class Home extends Component {
 	render(){
 		return (
 			<div className="wrapper">
-				<Nav/>
+				<Nav {...this.props}/>
 				<Preloader loading={this.state.loading} />
 			</div>
 		)

@@ -29,7 +29,7 @@ body, html {
           height: 100%;
           line-height: 60px;
           padding: 0 5px; }
-          .navbar-fixed nav .nav-wrapper ul li a {
+          .navbar-fixed nav .nav-wrapper ul li a, .navbar-fixed nav .nav-wrapper ul li button {
             display: inline-block;
             height: 25px;
             width: fit-content;
@@ -44,52 +44,46 @@ body, html {
             letter-spacing: 3px;
             font-weight: 300;
             font-size: 13px; }
-            .navbar-fixed nav .nav-wrapper ul li a:hover {
+            .navbar-fixed nav .nav-wrapper ul li a:hover, .navbar-fixed nav .nav-wrapper ul li button:hover {
               background-color: #5015b2;
               color: #fff; }
-            .navbar-fixed nav .nav-wrapper ul li a.signup {
+            .navbar-fixed nav .nav-wrapper ul li a.signup, .navbar-fixed nav .nav-wrapper ul li button.signup {
               border-color: #ff0e3b;
               color: #ff0e3b; }
-              .navbar-fixed nav .nav-wrapper ul li a.signup:hover {
+              .navbar-fixed nav .nav-wrapper ul li a.signup:hover, .navbar-fixed nav .nav-wrapper ul li button.signup:hover {
                 background-color: #ff0e3b;
                 color: #fff; }
 
 .aside .content {
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px; }
-  .aside .content:first-child {
-    margin-bottom: 20px; }
+  border-radius: 10px;
+  margin-bottom: 20px; }
 
-.add-report > .valign-wrapper {
+.add-report > .row {
   width: 100%;
   height: calc(100% - 60px);
   min-height: fit-content;
   padding: 30px; }
-  .add-report > .valign-wrapper .add-report-form {
-    width: 75%;
+  .add-report > .row .add-report-form {
     border-radius: 5px;
     padding: 50px;
     background-color: #fff;
     margin: 0 auto; }
-    @media screen and (max-width: 992px) {
-      .add-report > .valign-wrapper .add-report-form {
-        width: 90%; } }
     @media screen and (max-width: 600px) {
-      .add-report > .valign-wrapper .add-report-form {
-        width: 100%;
+      .add-report > .row .add-report-form {
         padding: 30px; } }
-    .add-report > .valign-wrapper .add-report-form h4 {
+    .add-report > .row .add-report-form h4 {
       margin-top: 0; }
-    .add-report > .valign-wrapper .add-report-form .row {
+    .add-report > .row .add-report-form .row {
       margin: 0; }
-      .add-report > .valign-wrapper .add-report-form .row .input-container {
+      .add-report > .row .add-report-form .row .input-container {
         margin: 5px 0;
         padding: 0; }
-        .add-report > .valign-wrapper .add-report-form .row .input-container label:not(.checkbox-label) {
+        .add-report > .row .add-report-form .row .input-container label:not(.checkbox-label) {
           font-size: 15px;
           color: #000; }
-        .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]), .add-report > .valign-wrapper .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]), .reports .col .search .filter .add-report > .valign-wrapper .add-report-form .row .input-container select:not([type=checkbox]), .add-report > .valign-wrapper .add-report-form .row .input-container select, .add-report > .valign-wrapper .add-report-form .row .input-container textarea {
+        .add-report > .row .add-report-form .row .input-container input:not([type=checkbox]), .add-report > .row .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]), .reports .col .search .filter .add-report > .row .add-report-form .row .input-container select:not([type=checkbox]), .add-report > .row .add-report-form .row .input-container select, .add-report > .row .add-report-form .row .input-container textarea {
           border: 1px solid #666 !important;
           border-radius: 3px;
           outline: none;
@@ -98,19 +92,19 @@ body, html {
           margin: 10px 0;
           width: 100%;
           box-sizing: border-box; }
-          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]).placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]).placeholder, .reports .col .search .filter .add-report > .valign-wrapper .add-report-form .row .input-container select:not([type=checkbox]).placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select.placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea.placeholder {
+          .add-report > .row .add-report-form .row .input-container input:not([type=checkbox]).placeholder, .add-report > .row .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]).placeholder, .reports .col .search .filter .add-report > .row .add-report-form .row .input-container select:not([type=checkbox]).placeholder, .add-report > .row .add-report-form .row .input-container select.placeholder, .add-report > .row .add-report-form .row .input-container textarea.placeholder {
             color: #666; }
-          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]):-moz-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]):-moz-placeholder, .reports .col .search .filter .add-report > .valign-wrapper .add-report-form .row .input-container select:not([type=checkbox]):-moz-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select:-moz-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea:-moz-placeholder {
+          .add-report > .row .add-report-form .row .input-container input:not([type=checkbox]):-moz-placeholder, .add-report > .row .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]):-moz-placeholder, .reports .col .search .filter .add-report > .row .add-report-form .row .input-container select:not([type=checkbox]):-moz-placeholder, .add-report > .row .add-report-form .row .input-container select:-moz-placeholder, .add-report > .row .add-report-form .row .input-container textarea:-moz-placeholder {
             color: #666; }
-          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox])::-webkit-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox])::-webkit-input-placeholder, .reports .col .search .filter .add-report > .valign-wrapper .add-report-form .row .input-container select:not([type=checkbox])::-webkit-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select::-webkit-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea::-webkit-input-placeholder {
+          .add-report > .row .add-report-form .row .input-container input:not([type=checkbox])::-webkit-input-placeholder, .add-report > .row .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox])::-webkit-input-placeholder, .reports .col .search .filter .add-report > .row .add-report-form .row .input-container select:not([type=checkbox])::-webkit-input-placeholder, .add-report > .row .add-report-form .row .input-container select::-webkit-input-placeholder, .add-report > .row .add-report-form .row .input-container textarea::-webkit-input-placeholder {
             color: #666; }
-          .add-report > .valign-wrapper .add-report-form .row .input-container input:not([type=checkbox]):-ms-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]):-ms-input-placeholder, .reports .col .search .filter .add-report > .valign-wrapper .add-report-form .row .input-container select:not([type=checkbox]):-ms-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container select:-ms-input-placeholder, .add-report > .valign-wrapper .add-report-form .row .input-container textarea:-ms-input-placeholder {
+          .add-report > .row .add-report-form .row .input-container input:not([type=checkbox]):-ms-input-placeholder, .add-report > .row .add-report-form .row .input-container .reports .col .search .filter select:not([type=checkbox]):-ms-input-placeholder, .reports .col .search .filter .add-report > .row .add-report-form .row .input-container select:not([type=checkbox]):-ms-input-placeholder, .add-report > .row .add-report-form .row .input-container select:-ms-input-placeholder, .add-report > .row .add-report-form .row .input-container textarea:-ms-input-placeholder {
             color: #666; }
-        .add-report > .valign-wrapper .add-report-form .row .input-container textarea {
+        .add-report > .row .add-report-form .row .input-container textarea {
           min-height: 100px;
           padding: 10px;
           resize: none; }
-        .add-report > .valign-wrapper .add-report-form .row .input-container button {
+        .add-report > .row .add-report-form .row .input-container button {
           background-color: #5015b2; }
 
 .reports {
@@ -151,7 +145,7 @@ body, html {
         color: #666; }
     .reports .col .search .filter {
       width: 45%;
-      padding-left: 10px; }
+      padding: 0 10px; }
       .reports .col .search .filter select {
         width: 100%;
         display: inline-block;
@@ -164,13 +158,24 @@ body, html {
         background-color: #5015b2; }
   .reports .col .report {
     background-color: #fff;
-    padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     transition: all .5s;
     display: block;
-    color: #000; }
-    .reports .col .report:hover {
+    color: #000;
+    overflow: hidden;
+    position: relative; }
+    .reports .col .report .loading {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.5); }
+    .reports .col .report .report-container {
+      padding: 20px; }
+    .reports .col .report.single:hover {
       box-shadow: rgba(0, 0, 0, 0.098) 0px 16px 26px !important; }
     .reports .col .report h4 {
       margin-top: 0;
@@ -179,7 +184,7 @@ body, html {
       padding: 10px 0; }
       .reports .col .report .tags .tag {
         margin-right: 10px;
-        background-color: rgba(80, 21, 178, 0.5);
+        background-color: #5015b2;
         border-radius: 100vh;
         padding: 5px 10px;
         color: #fff; }
@@ -187,5 +192,46 @@ body, html {
       padding-top: 10px; }
       .reports .col .report .description p {
         margin: 0; }
+    .reports .col .report .report-footer {
+      padding: 10px 20px;
+      background-color: #5015b2;
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      .reports .col .report .report-footer div {
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px; }
+        .reports .col .report .report-footer div a {
+          color: #fff; }
+        .reports .col .report .report-footer div .badge {
+          height: 30px;
+          width: 30px;
+          min-width: 30px;
+          padding: 0;
+          text-align: center;
+          line-height: 30px;
+          border-radius: 50%; }
+    .reports .col .report .comment-box {
+      padding: 10px 20px; }
+      .reports .col .report .comment-box textarea {
+        border: 1px solid #666 !important;
+        border-radius: 3px;
+        outline: none;
+        box-shadow: none !important;
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 100px;
+        resize: none; }
+        .reports .col .report .comment-box textarea.placeholder {
+          color: #666; }
+        .reports .col .report .comment-box textarea:-moz-placeholder {
+          color: #666; }
+        .reports .col .report .comment-box textarea::-webkit-input-placeholder {
+          color: #666; }
+        .reports .col .report .comment-box textarea:-ms-input-placeholder {
+          color: #666; }
 
 /*# sourceMappingURL=style.css.map */

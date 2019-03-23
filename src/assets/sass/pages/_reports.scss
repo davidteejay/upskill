@@ -41,7 +41,7 @@
 
 			.filter {
 				width: 45%;
-				padding-left: 10px;
+				padding: 0 10px;
 
 				select {
 					@extend input;
@@ -65,14 +65,24 @@
 
 		.report {
 			background-color: #fff;
-			padding: 20px;
 			margin-bottom: 20px;
 			border-radius: 10px;
 			transition: all .5s;
 			display: block;
 			color: #000;
+			overflow: hidden;
+			position: relative;
 
-			&:hover {
+			.loading {
+				@include abs-pos(0, 0, 0, 0, 10);
+				background-color: rgba(#fff, .5);
+			}
+
+			.report-container {
+				padding: 20px;
+			}
+
+			&.single:hover {
 				box-shadow: rgba(0, 0, 0, 0.098) 0px 16px 26px !important;
 			}
 
@@ -86,7 +96,7 @@
 
 				.tag {
 					margin-right: 10px;
-					background-color: rgba($accent2, .5);
+					background-color: rgba($accent2, 1);
 					border-radius: 100vh;
 					padding: 5px 10px;
 					color: #fff;
@@ -98,6 +108,52 @@
 
 				p {
 					margin: 0;
+				}
+			}
+
+			.report-footer {
+				padding: 10px 20px;
+				background-color: $accent2;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+
+				div {
+					color: #fff;
+					cursor: pointer;
+					font-size: 16px;
+
+					a {
+						color: #fff;
+					}
+
+					.badge {
+						height: 30px;
+						width: 30px;
+						min-width: 30px;
+						padding: 0;
+						text-align: center;
+						line-height: 30px;
+						border-radius: 50%;
+					}
+				}
+			}
+
+			.comment-box {
+				padding: 10px 20px;
+
+				textarea {
+					@include placeholder-color(#666);
+					border: 1px solid #666 !important;
+					border-radius: 3px;
+					outline: none;
+					box-shadow: none !important;
+					padding: 10px;
+					margin: 10px 0;
+					width: 100%;
+					box-sizing: border-box;
+					min-height: 100px;
+					resize: none;
 				}
 			}
 		}

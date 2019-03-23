@@ -1,23 +1,23 @@
 .add-report {
-	> .valign-wrapper {
+	> .row {
 		width: 100%;
 		height: calc(100% - 60px);
 		min-height: fit-content;
 		padding: 30px;
 
 		.add-report-form {
-			width: 75%;
+			// width: 75%;
 			border-radius: 5px;
 			padding: 50px;
 			background-color: #fff;
 			margin: 0 auto;
 
-			@include mQ(992px){
-				width: 90%;
-			}
+			// @include mQ(992px){
+			// 	width: 90%;
+			// }
 
 			@include mQ(600px){
-				width: 100%;
+				// width: 100%;
 				padding: 30px;
 			}
 

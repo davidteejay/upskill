@@ -87,12 +87,14 @@ export default class Reports extends Component {
 
 	componentDidMount(){
 		this.getReports()
+
+		if (!sessionStorage.userData) this.props.history.push('/login')
 	}
 
 	render(){
 		return (
 			<div className="wrapper">
-				<Nav/>
+				<Nav {...this.props}/>
 				<div className="reports row">
 					<div className="col s12 m8">
 						{this.props.match.params.tag && <div className="back">
@@ -104,7 +106,7 @@ export default class Reports extends Component {
 							<input type="search" id="search" value={this.state.search} onChange={this.handleSearch.bind(this)} placeholder="Input search term here"/>
 							<div className="filter">
 								Filter by Sector:<br/>
-								<select	value={this.state.filterCategory} class="browser-default" onChange={this.handleFilter.bind(this)}>
+								<select	value={this.state.filterCategory} className="browser-default" onChange={this.handleFilter.bind(this)}>
 									<option disabled value="">Select a sector</option>
 									{this.state.sectors.map((sector, i) => {
 										return <option key={i} value={sector}>{sector}</option>
