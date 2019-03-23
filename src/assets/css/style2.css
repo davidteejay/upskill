@@ -10,9 +10,8 @@ body, html, body #root, body #root .App, body #root .App .wrapper, html #root, h
 }
 .btn{
     background: none;
-    background-color: #000;
+    background-color: #5015b2;
     float: right;
-    border-radius: 5px;
 }
 label{
     color: #000;
@@ -41,13 +40,6 @@ label{
     .login .valign {
         width: 100%;
     }
-}
-
-
-.btn:hover{
-    background: #000;
-    color: white;
-
 }
 
 input:focus{

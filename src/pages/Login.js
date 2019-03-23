@@ -54,24 +54,28 @@ export default class Login extends Component {
 		})
 	}
 
+	componentDidMount(){
+		if (sessionStorage.userData) this.props.history.push('/reports')
+	}
+
 	render() {
 
 		return (
 			<div className="wrapper">
-				<Nav />
+				<Nav {...this.props} />
 				<Preloader loading={this.state.loading} />
-				<div class="login valign-wrapper">
+				<div className="login valign-wrapper">
 					<form className="valign shadowed" onSubmit={this.submitForm}>
 						<h4>Login to blah</h4>
 						<div className="row">
 							<div className=" col s12 input-container">
-								<label for="email">Email</label>
+								<label htmlFor="email">Email</label>
 								<input id="email" type="email" onChange={this.inputChange} ></input>	
 							</div>
 						</div>
 						<div className="row">
 							<div className=" col s12 input-container">
-								<label for="password">Password</label>
+								<label htmlFor="password">Password</label>
 								<input id="password" type="password" className="validate" onChange={this.passwordChange}/>									
 							</div>
 							<button className="btn z-depth-0" type="submit" name="action">LOGIN</button>

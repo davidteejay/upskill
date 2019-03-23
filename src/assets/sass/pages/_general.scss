@@ -11,14 +11,14 @@
 body, html {
   @extend %full;
   color: #000;
-  background-color: #f3f3f3;
+  background-color: rgba($accent2, .05);
 
   * {
     font-family: 'Open Sans', Roboto, sans-serif !important;
   }
 
   *.shadowed {
-			box-shadow: rgba(0, 0, 0, 0.098) 0px 4px 14px !important;
+			box-shadow: rgba(0, 0, 0, 0.098) 0px 4px 14px;
 		}
 
   #root, #root .App, #root .App .wrapper {
