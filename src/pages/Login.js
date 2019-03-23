@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { API_URL } from '../config/constants';
+import React, { Component } from 'react'
+import M from 'materialize-css'
+import { API_URL } from '../config/constants'
 
 import Nav from '../components/Nav'
 import Preloader from '../components/Preloader'
 import '../assets/css/style2.css'
-import Reports from './Reports';
-import Axios from 'axios';
+import axios from 'axios'
 
-export default class Home extends Component {
+export default class Login extends Component {
 	constructor(props) {
 		super(props)
 
@@ -17,21 +16,33 @@ export default class Home extends Component {
 			email: "",
 			password : "",
 		}
-		this.inputChange = this.inputChange.bind(this);
+		this.inputChange = this.inputChange.bind(this)
 		this.passwordChange = this.passwordChange.bind(this)
 		this.submitForm = this.submitForm.bind(this)
 	
 	}
 
-	submitForm(){
-		this.setState({
-			loading : true,
+	submitForm(e){
+		e.preventDefault()
+		this.setState({ loading: true })
+		const { email, password } = this.state
+
+		axios
+			.post(`${API_URL}/auth/login`, {
+				email,
+				password
 		})
-		Axios.post(`${API_URL}/auth/login`, ({
-			email : this.state.email,
-			password : this.state.password
-		}))
-		.then( res => console.log(res))
+		.then(res => {
+			res = res.data
+
+			if (res.error) M.toast({ html: `<span>${res.message}</span>` })
+			else {
+				sessionStorage.setItem('userData', JSON.stringify(res.data))
+				this.props.history.push('/reports')
+			}
+		})
+		.catch(err => console.error(err))
+		.finally(() => this.setState({ loading: false }))
 	}
 
 	inputChange(e){
@@ -46,34 +57,26 @@ export default class Home extends Component {
 	render() {
 
 		return (
-			<div>
+			<div className="wrapper">
 				<Nav />
 				<Preloader loading={this.state.loading} />
-				<div className="form-all">
-					<div className="form-card">
-						<form className="valign shadowed">
-							<div className="row">
-								<div className=" col s12 input-container">
-									<label for="email">Email</label>
-									<input id="email" type="email" onChange={this.inputChange} ></input>	
-								</div>
+				<div class="login valign-wrapper">
+					<form className="valign shadowed" onSubmit={this.submitForm}>
+						<h4>Login to blah</h4>
+						<div className="row">
+							<div className=" col s12 input-container">
+								<label for="email">Email</label>
+								<input id="email" type="email" onChange={this.inputChange} ></input>	
 							</div>
-
-								<br />
-
-							<div className="row">
-								<div className=" col s12 input-container">
-									<label for="password">password</label>
-									<input id="password" type="password" className="validate" onChange={this.passwordChange}></input>
-									
-								</div>
+						</div>
+						<div className="row">
+							<div className=" col s12 input-container">
+								<label for="password">Password</label>
+								<input id="password" type="password" className="validate" onChange={this.passwordChange}/>									
 							</div>
-
-							<br />
-							<button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.submitForm}><Link to="/reports"></Link>Submit</button>
-
-						</form>
-					</div>
+							<button className="btn z-depth-0" type="submit" name="action">LOGIN</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		)

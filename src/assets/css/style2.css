@@ -5,24 +5,42 @@ body, html, body #root, body #root .App, body #root .App .wrapper, html #root, h
   min-height: fit-content; 
 }
 
-.form-card{
-    margin: 10% 30%;
+.valign {
     padding: 30px;
-    
 }
 .btn{
     background: none;
-    border: 1px solid black;
-    color: #000;
-    margin: 1em 1em;
-    font: 1em sans-serif;
+    background-color: #000;
     float: right;
     border-radius: 5px;
 }
 label{
     color: #000;
-    font: 1.2em sans-serif;
+    font-size: 14px;
 
+}
+
+.login h4 {
+    margin-top: 0;
+}
+
+.login {
+    height: calc(100% - 60px);
+    width: 100%;
+    padding: 30px;
+}
+
+.login .valign {
+    padding: 50px;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 50%;
+}
+
+@media screen and (max-width: 600px){
+    .login .valign {
+        width: 100%;
+    }
 }
 
 
@@ -35,15 +53,15 @@ label{
 input:focus{
     border-bottom: 1px solid #000
 }
-input:not([type=checkbox]), select, textarea {
+input {
     border: 1px solid #666 !important;
     border-radius: 3px;
     outline: none;
     box-shadow: none !important;
-    padding: 0 10px;
+    padding: 0 10px !important;
     margin: 10px 0;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 .input-container {
@@ -73,3 +91,4 @@ input:not([type=checkbox]), select, textarea {
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
+
