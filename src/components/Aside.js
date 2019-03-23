@@ -16,14 +16,14 @@ export default class Aside extends Component {
 				<div className="content shadowed">
 					<h5>Report Categories</h5>
 					{this.state.sectors.map((sector, i) => {
-						return <p>
-							<Link key={i} to={`/sector/${sector.toLowerCase().replace(/ /g, '-')}`}>
+						return <p key={i}>
+							<Link to={`/sector/${sector.toLowerCase().replace(/ /g, '-')}`}>
 								{sector}
 							</Link>
 						</p>
 					})}
 				</div>
-				<div className="content shadowed"></div>
+				{/* <div className="content shadowed"></div> */}
 			</div>
 		)
 	}

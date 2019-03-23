@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 
 export default class Nav extends Component {
-	handleLogout(){
+	handleLogout(e){
+		e.preventDefault()
 		sessionStorage.clear()
-
 		this.props.history.push('/login')
 	}
 
@@ -17,9 +17,11 @@ export default class Nav extends Component {
 	}
 
 	render(){
+		const { transparent } = this.props
+
 		return (
-			<div className="navbar-fixed">
-				<nav className="white shadowed">
+			<div className="navbar-fixed" style={{ height: transparent ? 0 : 60 }}>
+				<nav className={transparent ? "transparent" : "white shadowed"}>
 					<div className="nav-wrapper">
 						<Link to="/" id="logo-container" className="brand-logo">Inform&eacute;</Link>
 						<a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
@@ -34,7 +36,7 @@ export default class Nav extends Component {
 								{sessionStorage.userData ? (JSON.parse(sessionStorage.userData).type !== 'ngo' && !window.location.hash.includes('new') && <Link className="btn z-depth-0" to="/new">Post Report</Link>) : <Link className="btn z-depth-0" to="/login">Login</Link>}
 							</li>
 							<li>
-								{sessionStorage.userData ? <button className="btn z-depth-0" onClick={this.handleLogout.bind(this)}>Logout</button> : <Link className="btn z-depth-0" to="/signup">Signup</Link>}
+								{sessionStorage.userData ? <Link to="/" className="btn z-depth-0" onClick={this.handleLogout.bind(this)}>Logout</Link> : <Link className="btn z-depth-0" to="/signup">Signup</Link>}
 							</li>
 						</ul>
 						{/* <ul id="nav-mobile" className="sidenav">

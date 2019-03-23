@@ -4,6 +4,7 @@ import {API_URL } from '../config/constants'
 import M from 'materialize-css'
 
 import Preloader from '../components/Preloader'
+import Nav from '../components/Nav'
 
 class User extends Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class User extends Component {
        })
    }
    
-   submitForm = (e) =>{
+   submitForm(e){
     e.preventDefault();
     this.setState({
         loading : true
@@ -91,7 +92,9 @@ class User extends Component {
         
         if(res.error) M.toast({ html : `<span>${res.message}</span>`})
         else{
-            M.toast({ html : `<span>${res.message}</span>`})
+            sessionStorage.setItem('userData', JSON.stringify({ ...res.data, type: 'user' }))
+
+            this.props.history.push('/reports')
         }
     })
     .catch( err => console.error(err))
@@ -101,20 +104,19 @@ class User extends Component {
     render() { 
         return ( 
             <div className="wrapper">
-                <Preloader />
+                <Nav {...this.props} />
+                <Preloader loading={this.state.loading}/>
                  <div id="#user" className="">
                             <div className="form-all">
                                 <div className="login valign-wrapper">
-                                    <form className="valign shadowed" onSubmit={this.submitForm} >
-                                        <h4>User Registration</h4>
+                                    <form className="valign shadowed" onSubmit={this.submitForm.bind(this)} >
+                                        <h5>Register as a User</h5>
                                         <div className="row">
                                             <div className=" col s12 input-container">
                                                 <label htmlFor="firstName">First Name</label>
                                                 <input id="firstName" type="text" onChange={this.fNameChange} ></input>	
                                             </div>
                                         </div>
-
-                                            <br />
 
                                         <div className="row">
                                             <div className=" col s12 input-container">
@@ -123,8 +125,6 @@ class User extends Component {
                                                 
                                             </div>
                                         </div>
-
-                                        <br />
 
                                         <div className="row">
                                             <div className=" col s12 input-container">
@@ -167,7 +167,7 @@ class User extends Component {
                                                 <input id="password" type="password" onChange={this.passChange} ></input>	
                                             </div>
                                         </div>
-                                        <button className="btn waves-effect waves-light" type="submit" name="action" >Submit</button>
+                                        <button className="btn" type="submit" name="action" >Submit</button>
 
                                     </form>
                                 </div>

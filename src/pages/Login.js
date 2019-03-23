@@ -66,7 +66,7 @@ export default class Login extends Component {
 				<Preloader loading={this.state.loading} />
 				<div className="login valign-wrapper">
 					<form className="valign shadowed" onSubmit={this.submitForm}>
-						<h4>Login to blah</h4>
+						<h4>Login</h4>
 						<div className="row">
 							<div className=" col s12 input-container">
 								<label htmlFor="email">Email</label>

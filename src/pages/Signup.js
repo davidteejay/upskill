@@ -6,26 +6,19 @@ import Nav from '../components/Nav';
 
 import '../assets/css/style2.css';
 
-class Signup extends Component {
-    constructor(props){
-        super(props)
-    }
-
-    componentDidMount(){
-       
-
-    }
+class Signup extends Component {    
     render() { 
         return (
-             <div>
-                 <Nav />
-
-                 <h4 className="reg"> Register as User or NGO</h4>
-
-                 <div className="signup">
-                
-                    <Link to="/signup/user" class="waves-effect waves-light btn-large bttn">User</Link>
-                    <Link to="/signup/ngo" class="waves-effect waves-light btn-large bttn">NGO</Link>
+            <div className="wrapper">
+                <Nav transparent/>
+                <div className="signup-container valign-wrapper">
+                    <div className="signup valign">
+                        <h2 className="reg center light"> Register as</h2>
+                        <div class="center">
+                            <Link to="/signup/user" className="btn-large bttn z-depth-0">A User</Link>
+                            <Link to="/signup/ngo" className="btn-large bttn z-depth-0">An NGO</Link>
+                        </div>
+                    </div>
                  </div>
              </div>
         );

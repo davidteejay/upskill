@@ -123,13 +123,13 @@ export default class Report extends Component {
 							Leave a Comment
 							<span className="badge white">{data.comments}</span>
 					</div>
-					<div className="share">
+					{/* <div className="share">
 						<span className="material-icons"></span>
 						Share Report
-					</div>
-					{JSON.parse(sessionStorage.userData).type === 'ngo' && <div className="backup" onClick={this.handleBackup.bind(this)}>
+					</div> */}
+					{JSON.parse(sessionStorage.userData).type === 'ngo' && data.status !== 'in-progress' && <div className="backup" onClick={this.handleBackup.bind(this)}>
 						<span className="material-icons"></span>
-						Back Report
+						Back This Report Up
 					</div>}
 				</div>
 				{this.state.commentBox && <div className="comment-box">

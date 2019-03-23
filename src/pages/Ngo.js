@@ -3,6 +3,9 @@ import Axios from 'axios';
 import {API_URL } from '../config/constants'
 import M from 'materialize-css'
 
+import Nav from '../components/Nav'
+import Preloader from '../components/Preloader'
+
 
 class Ngo extends Component {
     constructor(props) {
@@ -13,6 +16,7 @@ class Ngo extends Component {
             email : "",
             phone : "",
             password : "",
+            loading: false
          }
     }
 
@@ -45,7 +49,9 @@ class Ngo extends Component {
        })
    } 
    
-   submitForm = () =>{
+   submitForm(e){
+       e.preventDefault()
+       this.setState({ loading: true })
     const { name, address, password, email, phone, } = this.state
     Axios.post(`${API_URL}/auth/signup/`, {
         name,
@@ -61,31 +67,31 @@ class Ngo extends Component {
         console.log(res)
         if(res.error) M.toast({ html : `${res.message}`})
         else{
-            M.toast({ html : `${res.message}`})
+            sessionStorage.setItem('userData', JSON.stringify({ ...res.data, type: 'ngo' }))
+
+            this.props.history.push('/reports')
         }
     })
     .catch( err => console.error(err))
-    .finally({
-        
-    })
+    .finally(() => this.setState({ loading: false }))
 }
 
     render() { 
         return ( 
             <div className="wrapper">
+                <Nav { ...this.props }/>
+                <Preloader loading={this.state.loading} />
                  <div className="">
                             <div className="form-all">
                                 <div className="login valign-wrapper">
-                                    <form className="valign shadowed" onSubmit={this.submitForm} >
-                                        <h4> NGO Registration </h4>
+                                    <form className="valign shadowed" onSubmit={this.submitForm.bind(this)} >
+                                        <h4>Register as an NGO </h4>
                                         <div className="row">
                                             <div className=" col s12 input-container">
                                                 <label htmlFor="name">Name</label>
                                                 <input id="Name" type="text" onChange={this.nameChange} ></input>	
                                             </div>
                                         </div>
-
-                                            <br />
 
                                         <div className="row">
                                             <div className=" col s12 input-container">
@@ -95,11 +101,9 @@ class Ngo extends Component {
                                             </div>
                                         </div>
 
-                                        <br />
-
                                         <div className="row">
                                             <div className=" col s12 input-container">
-                                                <label htmlFor="email">Email</label>
+                                                <label htmlFor="email">Contact Email</label>
                                                 <input id="email" type="email" onChange={this.emailChange} ></input>	
                                             </div>
                                         </div>
@@ -107,7 +111,7 @@ class Ngo extends Component {
                                         
                                         <div className="row">
                                             <div className=" col s12 input-container">
-                                                <label htmlFor="phone">Phone</label>
+                                                <label htmlFor="phone">Contact Phone</label>
                                                 <input id="phone" type="text" onChange={this.phoneChange} ></input>	
                                             </div>
                                         </div>
@@ -119,7 +123,7 @@ class Ngo extends Component {
                                                 <input id="password" type="password" onChange={this.passChange} ></input>	
                                             </div>
                                         </div>
-                                        <button className="btn waves-effect waves-light"  type="submit" name="action" >Submit</button>
+                                        <button className="btn z-depth-0"  type="submit" name="action" >Submit</button>
 
                                     </form>
                                 </div>

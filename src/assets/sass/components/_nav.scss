@@ -1,6 +1,4 @@
 .navbar-fixed {
-  height: 60px;
-
   nav {
     padding: 0 30px;
     height: 60px;
@@ -52,6 +50,23 @@
                 color: #fff
               }
             }
+          }
+        }
+      }
+    }
+
+    &.transparent {
+      box-shadow: none !important;
+
+      a {
+        color: #fff !important;
+
+        &.btn {
+          border-color: #fff !important;
+
+          &:hover {
+            color: $accent2 !important;
+            background-color: #fff !important;
           }
         }
       }

@@ -14,47 +14,54 @@ body, html {
   body .valign, html .valign {
     width: 100%; }
 
-.navbar-fixed {
+.navbar-fixed nav {
+  padding: 0 30px;
   height: 60px; }
-  .navbar-fixed nav {
-    padding: 0 30px;
-    height: 60px; }
-    .navbar-fixed nav .nav-wrapper {
-      height: 100%;
-      width: 100%; }
-      .navbar-fixed nav .nav-wrapper a.brand-logo {
-        color: #5015b2;
-        font-size: 20px;
-        text-transform: uppercase;
-        letter-spacing: 3px; }
-      .navbar-fixed nav .nav-wrapper ul {
-        height: 100%; }
-        .navbar-fixed nav .nav-wrapper ul li {
-          background-color: transparent !important;
-          height: 100%;
-          line-height: 60px;
-          padding: 0px;
-          display: flex;
-          align-items: center; }
-          .navbar-fixed nav .nav-wrapper ul li a, .navbar-fixed nav .nav-wrapper ul li button {
-            display: inline-block;
-            height: 25px;
-            width: fit-content;
-            padding: 0 10px;
-            line-height: 23px;
-            color: #5015b2;
-            border-radius: 5px;
-            background-color: transparent;
-            transition: all .5s;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 300;
-            font-size: 13px; }
-            .navbar-fixed nav .nav-wrapper ul li a.btn, .navbar-fixed nav .nav-wrapper ul li button.btn {
-              border: 1px solid #5015b2; }
-              .navbar-fixed nav .nav-wrapper ul li a.btn:hover, .navbar-fixed nav .nav-wrapper ul li button.btn:hover {
-                background-color: #5015b2;
-                color: #fff; }
+  .navbar-fixed nav .nav-wrapper {
+    height: 100%;
+    width: 100%; }
+    .navbar-fixed nav .nav-wrapper a.brand-logo {
+      color: #5015b2;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px; }
+    .navbar-fixed nav .nav-wrapper ul {
+      height: 100%; }
+      .navbar-fixed nav .nav-wrapper ul li {
+        background-color: transparent !important;
+        height: 100%;
+        line-height: 60px;
+        padding: 0px;
+        display: flex;
+        align-items: center; }
+        .navbar-fixed nav .nav-wrapper ul li a, .navbar-fixed nav .nav-wrapper ul li button {
+          display: inline-block;
+          height: 25px;
+          width: fit-content;
+          padding: 0 10px;
+          line-height: 23px;
+          color: #5015b2;
+          border-radius: 5px;
+          background-color: transparent;
+          transition: all .5s;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          font-weight: 300;
+          font-size: 13px; }
+          .navbar-fixed nav .nav-wrapper ul li a.btn, .navbar-fixed nav .nav-wrapper ul li button.btn {
+            border: 1px solid #5015b2; }
+            .navbar-fixed nav .nav-wrapper ul li a.btn:hover, .navbar-fixed nav .nav-wrapper ul li button.btn:hover {
+              background-color: #5015b2;
+              color: #fff; }
+  .navbar-fixed nav.transparent {
+    box-shadow: none !important; }
+    .navbar-fixed nav.transparent a {
+      color: #fff !important; }
+      .navbar-fixed nav.transparent a.btn {
+        border-color: #fff !important; }
+        .navbar-fixed nav.transparent a.btn:hover {
+          color: #5015b2 !important;
+          background-color: #fff !important; }
 
 .aside .content {
   background-color: #fff;
@@ -254,5 +261,33 @@ body, html {
           color: #666; }
         .reports .col .report .comment-box textarea:-ms-input-placeholder {
           color: #666; }
+
+.signup-container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#5015b2, rgba(80, 21, 178, 0.8)); }
+  .signup-container .reg {
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    word-spacing: 15px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 50px; }
+
+.home {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#5015b2, rgba(80, 21, 178, 0.8)); }
+  .home .reg {
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    word-spacing: 15px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 50px; }
+  .home .bttn {
+    height: 65px;
+    line-height: 64px;
+    width: 200px; }
 
 /*# sourceMappingURL=style.css.map */
