@@ -42,7 +42,7 @@ export default class Login extends Component {
 			}
 		})
 		.catch(err => console.error(err))
-		.finally(() => this.setState({ loading: false }))
+		.finally(() => this.setState({ loading: true }))
 	}
 
 	inputChange(e){

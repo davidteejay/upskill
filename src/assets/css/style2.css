@@ -58,5 +58,34 @@ input {
 
 .input-container {
     margin: 5px 0;
-    padding: 0 !important;
+    padding: 0;
+}
+
+.signup{
+    margin-top: 10%;
+    padding: 10% 45%;
+    width: 100%;
+    display: flex;
+    background: #000;
+
+}
+
+.bttn{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 253, 253);
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.bttn:hover{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.reg{
+    text-align: center;
+    padding: 5%;
+    font: 3em courier;
 }
