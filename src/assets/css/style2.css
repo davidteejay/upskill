@@ -92,3 +92,8 @@ input {
     text-decoration: none;
 }
 
+.reg{
+    text-align: center;
+    padding: 5%;
+    font: 3em courier;
+}

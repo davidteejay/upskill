@@ -3,6 +3,7 @@ import Axios from 'axios';
 import {API_URL } from '../config/constants'
 import M from 'materialize-css'
 
+
 class Ngo extends Component {
     constructor(props) {
         super(props);
@@ -60,7 +61,7 @@ class Ngo extends Component {
         console.log(res)
         if(res.error) M.toast({ html : `${res.message}`})
         else{
-
+            M.toast({ html : `${res.message}`})
         }
     })
     .catch( err => console.error(err))
@@ -71,14 +72,15 @@ class Ngo extends Component {
 
     render() { 
         return ( 
-            <div>
-                 <div id="#user" className="">
+            <div className="wrapper">
+                 <div className="">
                             <div className="form-all">
-                                <div className="form-card">
+                                <div className="login valign-wrapper">
                                     <form className="valign shadowed" onSubmit={this.submitForm} >
+                                        <h4> NGO Registration </h4>
                                         <div className="row">
                                             <div className=" col s12 input-container">
-                                                <label htmlFor="firstName">Name</label>
+                                                <label htmlFor="name">Name</label>
                                                 <input id="Name" type="text" onChange={this.nameChange} ></input>	
                                             </div>
                                         </div>
@@ -88,7 +90,7 @@ class Ngo extends Component {
                                         <div className="row">
                                             <div className=" col s12 input-container">
                                                 <label htmlFor="Address">Address</label>
-                                                <input id="address" type="text" className="validate" onChange={this.lNameChange}></input>
+                                                <input id="address" type="text" className="validate" onChange={this.addressChange}></input>
                                                 
                                             </div>
                                         </div>
@@ -117,7 +119,7 @@ class Ngo extends Component {
                                                 <input id="password" type="password" onChange={this.passChange} ></input>	
                                             </div>
                                         </div>
-                                        <button className="btn waves-effect waves-light" type="submit" name="action" >Submit</button>
+                                        <button className="btn waves-effect waves-light"  type="submit" name="action" >Submit</button>
 
                                     </form>
                                 </div>

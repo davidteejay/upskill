@@ -15,12 +15,15 @@ class Signup extends Component {
        
 
     }
-    render() {
+    render() { 
         return (
              <div>
                  <Nav />
 
+                 <h4 className="reg"> Register as User or NGO</h4>
+
                  <div className="signup">
+                
                     <Link to="/signup/user" class="waves-effect waves-light btn-large bttn">User</Link>
                     <Link to="/signup/ngo" class="waves-effect waves-light btn-large bttn">NGO</Link>
                  </div>

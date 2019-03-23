@@ -3,13 +3,17 @@ import Axios from 'axios';
 import {API_URL } from '../config/constants'
 import M from 'materialize-css'
 
+import Preloader from '../components/Preloader'
+
 class User extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            loading : false,
             firstName : "",
             lastName : "",
             email : "",
+            address : "",
             phone : "",
             job : "",
             password : "",
@@ -34,6 +38,12 @@ class User extends Component {
        })
    } 
 
+   addressChange = e => {
+    this.setState({
+        address : e.target.value
+    })
+} 
+
    phoneChange = e => {
        this.setState({
            phone : e.target.value
@@ -41,7 +51,6 @@ class User extends Component {
    } 
 
    jobChange = e => {
-       console.log(e.target.value)
        this.setState({
            job : e.target.value
        })
@@ -60,11 +69,15 @@ class User extends Component {
    
    submitForm = (e) =>{
     e.preventDefault();
-    const { firstName, lastName, password, email, phone, job, dateOfBirth } = this.state
+    this.setState({
+        loading : true
+    })
+    const { firstName, lastName, password, email, address, phone, job, dateOfBirth } = this.state
     Axios.post(`${API_URL}/auth/signup`, {
         firstName,
         lastName,
         email,
+        address,
         password,
         phone,
         job,
@@ -75,24 +88,25 @@ class User extends Component {
     .then( res => {
         res = res.data
         console.log(res)
-        if(res.error) M.toast({ html : `${res.message}`})
+        
+        if(res.error) M.toast({ html : `<span>${res.message}</span>`})
         else{
-
+            M.toast({ html : `<span>${res.message}</span>`})
         }
     })
     .catch( err => console.error(err))
-    .finally({
-        
-    })
+    .finally( () => this.setState({ loading : false }))
 }
 
     render() { 
         return ( 
-            <div>
+            <div className="wrapper">
+                <Preloader />
                  <div id="#user" className="">
                             <div className="form-all">
-                                <div className="form-card">
+                                <div className="login valign-wrapper">
                                     <form className="valign shadowed" onSubmit={this.submitForm} >
+                                        <h4>User Registration</h4>
                                         <div className="row">
                                             <div className=" col s12 input-container">
                                                 <label htmlFor="firstName">First Name</label>
@@ -116,6 +130,13 @@ class User extends Component {
                                             <div className=" col s12 input-container">
                                                 <label htmlFor="email">Email</label>
                                                 <input id="email" type="email" onChange={this.emailChange} ></input>	
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className=" col s12 input-container">
+                                                <label htmlFor="address">Address</label>
+                                                <input id="address" type="text" onChange={this.addressChange} ></input>	
                                             </div>
                                         </div>
 
