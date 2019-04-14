@@ -1,9 +1,9 @@
+@import 'utils/mixins';
+@import 'utils/vars';
+
 @import 'pages/general';
 
+@import 'components/preloader';
 @import 'components/nav';
-@import 'components/aside';
 
-@import 'pages/addReport';
-@import 'pages/reports';
-@import 'pages/signup';
-@import 'pages/index';
+@import 'pages/home';

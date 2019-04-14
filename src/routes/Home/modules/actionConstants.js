@@ -1,0 +1,1 @@
+export const HOME_LOADING = 'HOME_LOADING'
