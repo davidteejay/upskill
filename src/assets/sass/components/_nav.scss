@@ -1,0 +1,58 @@
+nav {
+	@extend %padding;
+
+	.nav-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		a.logo-container {
+			flex: .2;
+		}
+
+		ul {
+			flex: .2;
+
+			&.main-nav {
+				flex: .6;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			}
+
+			li {
+				background: transparent !important;
+				text-align: center;
+				padding: 0 15px;
+
+				a {
+					background: transparent !important;
+					display: inline;
+					// height: fit-content;
+					padding: 0;
+					text-align: center;
+
+					&.signup {
+						color: #fff;
+						background-color: $grey;
+						padding: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	&.home-nav {
+		box-shadow: none;
+		background-color: transparent !important;
+
+		* {
+			color: #fff !important;
+		}
+
+		a.signup {
+			color: $grey !important;
+			background-color: #fff !important;
+		}
+	}
+}

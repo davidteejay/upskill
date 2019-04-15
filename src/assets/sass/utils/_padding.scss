@@ -1,0 +1,11 @@
+%padding {
+	padding: 0 75px;
+
+	@include mQ(992px){
+		padding: 0 50px;
+	}
+
+	@include mQ(600px){
+		padding: 0 30px;
+	}
+}

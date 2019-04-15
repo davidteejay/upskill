@@ -6,12 +6,10 @@ import { HOME_LOADING } from './actionConstants'
 //Actions
 export const sayHello = () => {
 	return (dispatch, store) => {
-		setTimeout(() => {
-			dispatch({
-				type: HOME_LOADING,
-				payload: false
-			})
-		}, 10000)
+		dispatch({
+			type: HOME_LOADING,
+			payload: false
+		})
 	}
 }
 
