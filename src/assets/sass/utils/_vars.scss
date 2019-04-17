@@ -2,3 +2,5 @@ $blue: #0095f9;
 $white: #fff;
 $grey: #757575;
 $lightGrey: #e0e0e0;
+$lightestGrey: lighten($lightGrey, 7%);
+$purplish: darken($blue, 20%);

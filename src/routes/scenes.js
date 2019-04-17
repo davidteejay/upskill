@@ -7,9 +7,11 @@ import Loading from '../components/Preloader'
 const newHistory = createBrowserHistory()
 
 const Home = React.lazy(() => import('./Home/containers/'))
+const News = React.lazy(() => import('./News/containers/'))
 
 const routes = [
-  { path: '/', component: Home, key: 'Home' }
+  { path: '/', component: Home, key: 'Home' },
+  { path: '/news', component: News, key: 'News' },
 ]
 
 export default class App extends Component {

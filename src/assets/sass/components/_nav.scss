@@ -1,6 +1,10 @@
 nav {
 	@extend %padding;
 
+	* {
+		color: #000 !important;
+	}
+
 	.nav-wrapper {
 		display: flex;
 		align-items: center;
@@ -33,9 +37,14 @@ nav {
 					text-align: center;
 
 					&.signup {
-						color: #fff;
-						background-color: $grey;
-						padding: 10px;
+						color: #fff !important;
+						background-color: $blue !important;
+						padding: 5px 10px;
+						border-radius: 3px;
+					}
+
+					&.active {
+						color: $blue !important;
 					}
 				}
 			}

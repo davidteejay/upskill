@@ -1,0 +1,96 @@
+.footer {
+	@extend %padding;
+	padding: {
+		top: 20px;
+		bottom: 20px;
+	}
+
+	&.has-bg {
+		background-color: $lightGrey;
+	}
+
+	.row {
+		margin: 0;
+
+		.col {
+			&.social-cover {
+				padding: 20px 5px;
+
+				.social {
+					display: block;
+					margin: 5px auto;
+					width: 50px;
+					height: 50px;
+					text-align: center;
+					line-height: 50px;
+					border-radius: 50%;
+					background-color: $grey;
+					color: #fff;
+
+					i {
+						width: 100%;
+					}
+				}
+			}
+
+			&.bum {
+				padding-top: 20px;
+
+				span, a {
+					color: #000 !important;
+					margin: 0 10px;
+				}
+			}
+
+			h4 {
+				width: fit-content;
+				position: relative;
+
+				&.has-after:after {
+					content: '';
+					z-index: 2;
+					background-color: $purplish;
+					height: 2px;
+					width: 100px;
+					position: absolute;
+					top: -10px;
+					left: 0;
+				}
+			}
+
+			p {
+				margin: 0;
+				margin-top: 5px;
+			}
+
+			input {
+				margin: 10px 0;
+				padding: 0 10px;
+				border: 1px solid $grey;
+				color: $grey;
+				@include placeholder-color($grey);
+				border-radius: 3px;
+				outline: none;
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				background-color: transparent;
+			}
+
+			textarea {
+				@extend input;
+				height: auto;
+				line-height: 1.5;
+				min-height: 100px;
+				box-shadow: none !important;
+			}
+
+			.btn {
+				background-color: $blue;
+				font-weight: 500;
+				color: #fff;
+				border-radius: 10px;
+			}
+		}
+	}
+}

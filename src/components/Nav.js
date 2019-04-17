@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default ({ isHome = false }) => {
+export default ({ isHome = false, active = '' }) => {
 	const links = [
-		{ path: '/about', text: 'About Us' },
-		{ path: '/hub', text: 'SkillHub' },
-		{ path: '/explore', text: 'Explore' },
-		{ path: '/news', text: 'News & Events' },
-		{ path: '/contact', text: 'Contact Us' },
+		{ path: '/about', text: 'About Us', key: 'about' },
+		{ path: '/hub', text: 'SkillHub', key: 'hub' },
+		{ path: '/explore', text: 'Explore', key: 'explore' },
+		{ path: '/news', text: 'News & Events', key: 'news' },
+		{ path: '/contact', text: 'Contact Us', key: 'contact' },
 	]
 
 	return (
@@ -17,8 +17,8 @@ export default ({ isHome = false }) => {
 				</a>
 				<ul className="hide-on-med-and-down main-nav">
 					{links.map((link, i) => {
-						return <li key={i}>
-							<a href={link.path}>{link.text}</a>
+						return <li key={link.key}>
+							<a href={link.path} className={link.key === active ? "active" : ""}>{link.text}</a>
 						</li>
 					})}
 				</ul>
