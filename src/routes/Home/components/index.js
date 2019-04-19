@@ -13,26 +13,56 @@ import '../../../assets/slick/slick-theme.css'
 import 'materialize-css/dist/css/materialize.min.css'
 import '../../../assets/css/style.min.css'
 
+let carouselInterval = null
+
 export default class Home extends Component {
 	constructor(props){
 		super(props)
 
 		this.state = {
-			activeCategory: 1,
-		}
+      activeCategory: 1,
+      carouselInstance: null
+    }
+    
+    this.nextSlide = this.nextSlide.bind(this)
+    this.prevSlide = this.prevSlide.bind(this)
 	}
 
 	async componentWillMount(){
 		await this.props.sayHello()
 
 		let collapsible = document.querySelectorAll('.collapsible')
-		let options = {}
+		let collapsibleOptions = {}
 
-		M.Collapsible.init(collapsible, options)
+    M.Collapsible.init(collapsible, collapsibleOptions)
+    
+    let carousel = document.querySelectorAll('.carousel')
+    let carouselOptions = {
+      indicators: true,
+      dist: -150
+    }
+
+    M.Carousel.init(carousel, carouselOptions)
+
+    let carouselInstance = M.Carousel.getInstance(document.querySelector('.carousel'))
+    this.setState({ carouselInstance })
+    carouselInterval = setInterval(() => carouselInstance.next(), 5000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(carouselInterval)
   }
   
   selectCategory(index){
     this.setState({ activeCategory: index })
+  }
+
+  prevSlide(){
+    this.state.carouselInstance.prev()
+  }
+
+  nextSlide(){
+    this.state.carouselInstance.next()
   }
 
 	render(){
@@ -86,6 +116,54 @@ export default class Home extends Component {
         <div className="header">
           <div className="header-content">
             <Nav isHome />
+            <div className="carousel-cover">
+              <div className="carousel">
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+                <a href="/#!" className="carousel-item z-depth-1">
+                  <div className="carousel-content">
+                    <button className="btn z-depth-0">Read More &rarr;</button>
+                  </div>
+                </a>
+              </div>
+              <div className="arrows">
+                <button className="btn z-depth-0" onClick={this.prevSlide}>&lsaquo;</button>
+                <button className="btn z-depth-0" onClick={this.nextSlide}>&rsaquo;</button>
+              </div>
+            </div>
           </div>
         </div>
         <div className="works">

@@ -1,13 +1,96 @@
 .home {
 	.header {
 		padding: 0 5px;
-		height: 80%;
+		height: 90%;
 		width: 100%;
 
 		.header-content {
 			height: 100%;
 			width: 100%;
 			background-color: $grey;
+
+			.carousel-cover {
+				width: 100%;
+				height: calc(100% - 64px);
+				@extend %padding;
+				position: relative;
+
+				.arrows {
+					position: absolute;
+					left: 0;
+					top: calc(50% - 25px);
+					width: 100%;
+					height: 50px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					.btn {
+						width: 50px;
+						height: 50px;
+						text-align: center;
+						line-height: 50px;
+						padding: 0;
+						background-color: transparent;
+						color: #fff;
+						font-size: 52px;
+					}
+				}
+
+				@include mQ(600px){
+					height: calc(100% - 56px);
+				}
+
+				.carousel {
+					width: 100%;
+					height: 100% !important;
+					padding-bottom: 30px;
+
+					.carousel-item {
+						height: 450px;
+						width: 450px;
+						background-color: lighten($blue, 40%);
+						opacity: 1 !important;
+
+						@include mQ(600px){
+							width: 100%;
+							height: 100%;
+						}
+
+						.carousel-content {
+							width: 100%;
+							height: 100%;
+							position: relative;
+
+							.btn {
+								position: absolute;
+								bottom: 20px;
+								right: 20px;	
+								background-color: $blue;
+								font-weight: 500;
+								color: #fff;
+								border-radius: 10px;
+								text-transform: capitalize;
+							}
+						}
+					}
+
+					.indicators {
+						li {
+							margin: 5px;
+							height: 15px;
+							width: 15px;
+							opacity: .5;
+							background-color: #fff;
+							transition: all .5s;
+
+							&.active {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 

@@ -5,6 +5,24 @@ nav {
 		color: #000 !important;
 	}
 
+	.sidenav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0 20px;
+
+		li {
+			width: 100%;
+			text-align: left !important;
+		}
+
+		* {
+			color: #000 !important;
+			text-align: left;
+		}
+	}
+
 	.nav-wrapper {
 		display: flex;
 		align-items: center;
@@ -59,7 +77,24 @@ nav {
 			color: #fff !important;
 		}
 
-		a.signup {
+		.sidenav {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			padding: 0 20px;
+
+			li {
+				width: 100%;
+			}
+
+			* {
+				color: #000 !important;
+				text-align: left;
+			}
+		}
+
+		ul li a.signup {
 			color: $grey !important;
 			background-color: #fff !important;
 		}
