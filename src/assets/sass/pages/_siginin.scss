@@ -1,0 +1,120 @@
+.signin {
+	.signin-container {
+		height: 90%;
+		min-height: fit-content;
+		@extend %padding;
+
+		.overlay {
+			background-color: rgba($grey, .6);
+			padding: 10px 30px;
+			height: 100%;
+			min-height: fit-content;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			.logo-container {
+				text-align: center;
+				
+				h3 {
+					color: $blue;
+					margin: 0;
+				}
+			}
+
+			.signin-form {
+				width: 60%;
+				background-color: rgba($grey, .6);
+				border-radius: 20px;
+				padding: 30px;
+				margin: 0 auto;
+				margin-top: 20px;
+
+				@include mQ(992px){
+					width: 75%;
+				}
+
+				@include mQ(600px){
+					width: 100%;
+				}
+
+				.row {
+					margin: 0;
+
+					.col {
+						margin: 5px 0;
+					}
+
+					input {
+						background-color: #fff;
+						border-radius: 10px;
+						border: none !important;
+						outline: none !important;
+						box-shadow: none !important;
+						color: #000;
+						@include placeholder-color($grey);
+						padding: 0 10px;
+					}
+
+					.btn-cover {
+						padding: 10px 0;
+						
+						.btn {
+							background-color: $blue;
+							font-weight: 500;
+							padding: {
+								left: 30px;
+								right: 30px;
+							}
+							color: #fff;
+							border-radius: 10px;
+							text-transform: capitalize;
+
+							&.social-btn {
+								background-color: #fff;
+								color: $grey;
+								margin: 5px 0;
+							}
+						}
+					}
+
+					p:not(.register) {
+						position: relative;
+						margin: 10px auto;
+
+						&:after {
+							content: '';
+							position: absolute;
+							z-index: 5;
+							height: 2px;
+							width: calc(50% - 50px);
+							top: calc(50% - 1px);
+							left: 30px;
+							background-color: #fff;
+						}
+
+						&:before {
+							content: '';
+							position: absolute;
+							z-index: 5;
+							height: 2px;
+							width: calc(50% - 50px);
+							top: calc(50% - 1px);
+							right: 30px;
+							background-color: #fff;
+						}
+					}
+
+					p.register {
+						margin: 10px auto;
+
+						a {
+							color: $blue;
+						}
+					}
+				}
+			}
+		}
+	}
+}

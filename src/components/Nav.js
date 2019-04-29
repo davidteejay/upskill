@@ -15,7 +15,7 @@ export default ({ isHome = false, active = '' }) => {
 	M.Sidenav.init(sideNav, options);
 
 	return (
-		<nav className={isHome ? 'white black-text z-depth-2 home-nav' : 'white black-text z-depth-2'}>
+		<nav className="white black-text z-depth-2">
 			<div className="nav-wrapper">
 				<a href="/" className="logo-container">
 					Logo
@@ -28,7 +28,7 @@ export default ({ isHome = false, active = '' }) => {
 					})}
 				</ul>
 				<ul className="hide-on-med-and-down">
-					<li className="right"><a href="/signup" className="signup">Sign Up</a></li>
+					<li className="right"><a href="/signup" className="signup z-depth-3">Get Started</a></li>
 					<li className="right"><a href="/signin">Sign In</a></li>
 				</ul>
 				<a href="/#!" className="hide-on-large-only sidenav-trigger" data-target="slide-out">

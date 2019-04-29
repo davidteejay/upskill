@@ -8,10 +8,16 @@ const newHistory = createBrowserHistory()
 
 const Home = React.lazy(() => import('./Home/containers/'))
 const News = React.lazy(() => import('./News/containers/'))
+const Signin = React.lazy(() => import('./Signin/containers/'))
+const Signup = React.lazy(() => import('./Signup/containers/'))
+const About = React.lazy(() =>import ('./About/components/'))
 
 const routes = [
   { path: '/', component: Home, key: 'Home' },
   { path: '/news', component: News, key: 'News' },
+  { path: '/signin', component: Signin, key: 'Signin' },
+  { path: '/signup', component: Signup, key: 'Signup' },
+  { path: '/about', component: About, key: 'About' },
 ]
 
 export default class App extends Component {

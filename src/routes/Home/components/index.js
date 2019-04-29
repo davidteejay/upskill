@@ -39,7 +39,7 @@ export default class Home extends Component {
     let carousel = document.querySelectorAll('.carousel')
     let carouselOptions = {
       indicators: true,
-      dist: -150
+      fullWidth: true
     }
 
     M.Carousel.init(carousel, carouselOptions)
@@ -118,44 +118,28 @@ export default class Home extends Component {
             <Nav isHome />
             <div className="carousel-cover">
               <div className="carousel">
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
+                <a href="#!" className="carousel-item">
+                  <div className="overlay">
+                    <div className="carousel-content right-align">
+                      <h3>WOULDN'T IT BE GREAT TO BE WHERE YOU BELONG?</h3>
+                      <button className="btn z-depth-3">Get Started &rarr;</button>
+                    </div>
                   </div>
                 </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
+                <a href="#!" className="carousel-item">
+                  <div className="overlay">
+                    <div className="carousel-content right-align">
+                      <h3>WOULDN'T IT BE GREAT TO BE WHERE YOU BELONG?</h3>
+                      <button className="btn z-depth-3">Get Started &rarr;</button>
+                    </div>
                   </div>
                 </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
-                  </div>
-                </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
-                  </div>
-                </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
-                  </div>
-                </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
-                  </div>
-                </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
-                  </div>
-                </a>
-                <a href="/#!" className="carousel-item z-depth-1">
-                  <div className="carousel-content">
-                    <button className="btn z-depth-0">Read More &rarr;</button>
+                <a href="#!" className="carousel-item">
+                  <div className="overlay">
+                    <div className="carousel-content right-align">
+                      <h3>WOULDN'T IT BE GREAT TO BE WHERE YOU BELONG?</h3>
+                      <button className="btn z-depth-3">Get Started &rarr;</button>
+                    </div>
                   </div>
                 </a>
               </div>
@@ -172,28 +156,25 @@ export default class Home extends Component {
             <div className="col s12 m6 l4">
               <div className="number">1</div>
               <div className="img" />
-              <h4 className="light center">Lorem Ipsum</h4>
+              <h4 className="light center">Sign Up</h4>
               <p className="center">
-                lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                lorem lorem lorem lorem lorem
+                Complete your profile and apply with your personal details.
               </p>
             </div>
             <div className="col s12 m6 l4">
               <div className="number">2</div>
               <div className="img" />
-              <h4 className="light center">Lorem Ipsum</h4>
+              <h4 className="light center">Choose A Skill</h4>
               <p className="center">
-                lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                lorem lorem lorem lorem lorem
+                Explore our recommendations or choose from our great selection of on demand skills
               </p>
             </div>
             <div className="col s12 m6 l4 push-m3">
               <div className="number">3</div>
               <div className="img" />
-              <h4 className="light center">Lorem Ipsum</h4>
+              <h4 className="light center">Learn A Skill</h4>
               <p className="center">
-                lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                lorem lorem lorem lorem lorem
+                Learn and improve your preferred skill set with the best training resources, guided mentorship and tools available.
               </p>
             </div>
             <div className="clearfix" />
@@ -202,28 +183,25 @@ export default class Home extends Component {
             <div className="col s12 m6 l4">
               <div className="number">4</div>
               <div className="img" />
-              <h4 className="light center">Lorem Ipsum</h4>
+              <h4 className="light center">Join A Community</h4>
               <p className="center">
-                lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                lorem lorem lorem lorem lorem
+                Join a local community near you and experience an amazing network of vibrant people like you.
               </p>
             </div>
             <div className="col s12 m6 l4">
               <div className="number">5</div>
               <div className="img" />
-              <h4 className="light center">Lorem Ipsum</h4>
+              <h4 className="light center">Explore Opportunities</h4>
               <p className="center">
-                lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                lorem lorem lorem lorem lorem
+                Get access to our wide selection of job opportunities tailored to your preferred skill set.
               </p>
             </div>
             <div className="col s12 m6 l4 push-m3">
               <div className="number">6</div>
               <div className="img" />
-              <h4 className="light center">Lorem Ipsum</h4>
+              <h4 className="light center">Apply For Opportunities</h4>
               <p className="center">
-                lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                lorem lorem lorem lorem lorem
+                Find the right job and apply. Get real world experience working on exciting projects and advance your career.
               </p>
             </div>
             <div className="clearfix" />
@@ -261,19 +239,22 @@ export default class Home extends Component {
                   <h5 className="center">EXPLORE SKILLS</h5>
                   <Slider { ...categorySliderOptions }>
                     <div className="skill">
-                      <div className="inner"/>
+                      <div className="inner">
+                        <h6>SOCIAL MEDIA MANAGEMENT</h6>
+                        <button className="btn z-depth-2">Explore</button>
+                      </div>
                     </div>
                     <div className="skill">
-                      <div className="inner"/>
+                      <div className="inner">
+                        <h6>GRAPHICS DESIGN</h6>
+                        <button className="btn z-depth-2">Explore</button>
+                      </div>
                     </div>
                     <div className="skill">
-                      <div className="inner"/>
-                    </div>
-                    <div className="skill">
-                      <div className="inner"/>
-                    </div>
-                    <div className="skill">
-                      <div className="inner" />
+                      <div className="inner">
+                        <h6>PROGRAMMING</h6>
+                        <button className="btn z-depth-2">Explore</button>
+                      </div>
                     </div>
                   </Slider>
                 </div>
@@ -281,19 +262,39 @@ export default class Home extends Component {
                   <h5 className="center">FEATURED COURSES</h5>
                   <div className="row">
                     <div className="col s12 m6 l3">
-                      <div className="course" />
+                      <div className="course">
+                        <div className="inner">
+                          <h6>PHOTOSHOP DOUBLE EXPOSURE</h6>
+                          <button className="btn z-depth-0">Start  Learning</button>
+                        </div>
+                      </div>
                     </div>
                     <div className="col s12 m6 l3">
-                      <div className="course" />
+                      <div className="course">
+                        <div className="inner">
+                          <h6>PHOTOSHOP COLOR MANIPULATION</h6>
+                          <button className="btn z-depth-0">Start  Learning</button>
+                        </div>
+                      </div>
                     </div>
                     <div className="col s12 m6 l3">
-                      <div className="course" />
+                      <div className="course">
+                        <div className="inner">
+                          <h6>HTML AND CSS</h6>
+                          <button className="btn z-depth-0">Start  Learning</button>
+                        </div>
+                      </div>
                     </div>
                     <div className="col s12 m6 l3">
-                      <div className="course" />
+                      <div className="course">
+                        <div className="inner">
+                          <h6>CONTENT WRITING</h6>
+                          <button className="btn z-depth-0">Start  Learning</button>
+                        </div>
+                      </div>
                     </div>
                     <div className="col s12 center">
-                      <button className="btn z-depth-0">
+                      <button className="btn z-depth-3">
                         See More &rarr;
                       </button>
                     </div>
@@ -403,7 +404,7 @@ export default class Home extends Component {
         </div>
         <div className="learn">
           <div className="content center">
-            <button className="btn btn-large z-depth-0">Start Learning Today</button>
+            <button className="btn btn-large z-depth-3">Start Learning Today</button>
           </div>
         </div>
         <Footer/>

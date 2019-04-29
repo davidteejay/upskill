@@ -113,7 +113,7 @@ export default class Home extends Component {
 					<div className="others row">
 						{this.state.news.map((item, i) => {
 							return (
-								<div className="col m6 s12" key={i}>
+								<div className="col l4 m6 s12" key={i}>
 									<div className="img"></div>
 									<h5>{item.title}</h5>
 									<p>{item.body}</p>

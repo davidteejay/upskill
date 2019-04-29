@@ -1,0 +1,298 @@
+.about {
+	.about-container {
+		.values {
+			@extend %padding;
+			padding: {
+				top: 30px;
+				bottom: 30px;
+			}
+
+			h2 {
+				font-weight: 700;
+				color: $blue;
+				text-align: center;
+			}
+
+			p {
+				font-size: 22px;
+				margin: 15px 0;
+			}
+
+			.vision {
+				margin: 0;
+				background-color: $blue;
+				height: 500px;
+				min-height: fit-content;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				@include mQ(600px){
+					background-color: $grey;
+				}
+
+				.img {
+					background-color: $grey;
+					flex: .7;
+					height: 100%;
+
+					@include mQ(600px){
+						display: none;
+					}
+				}
+
+				.text {
+					padding: 50px;
+					// background-color: $blue;
+					flex: .5;
+
+					@include mQ(600px){
+						background-color: rgba($blue, .5);
+						padding: 30px;
+						flex: 1;
+					}
+
+					h4 {
+						color: #fff;
+						text-align: center;
+						margin: 0;
+					}
+
+					p {
+						color: #fff;
+						text-align: justify;
+						font-size: 22px;
+					}
+				}
+			}
+
+			h4.core-head {
+				font-weight: 700;
+				color: $blue;
+				width: fit-content;
+				position: relative;
+				margin: {
+					top: 50px;
+					bottom: 0;
+				}
+
+				&::after {
+					content: '';
+					z-index: 2;
+					background-color: $grey;
+					height: 2px;
+					width: 100px;
+					position: absolute;
+					top: -10px;
+					left: 0;
+				}
+			}
+		}
+
+		.core {
+			@extend %padding;
+			padding: {
+				top: 30px;
+				bottom: 30px;
+			}
+			background-color: $lightGrey;
+
+			h4 {
+				font-weight: 700;
+				color: $blue;
+				width: fit-content;
+				position: relative;
+				margin: 0 auto;
+				margin-bottom: 20px;
+
+				&::after {
+					content: '';
+					z-index: 2;
+					background-color: $grey;
+					height: 2px;
+					width: 100px;
+					position: absolute;
+					top: calc(100% + 10px);
+					left: calc(50% - 50px);
+				}
+			}
+
+			.row {
+				margin: 0;
+				padding-top: 20px;
+
+				.col:not(:last-child){
+					border-right: 3px solid $blue;
+				}
+			}
+		}
+
+		.works {
+			// @extend %padding;
+
+			h3 {
+				color: $blue;
+				font-weight: 700;
+				margin-bottom: 40px;
+			}
+
+			.row {
+				position: relative;
+				@extend %padding;
+
+				&:last-child {
+					background-color: $lightestGrey;
+				}
+
+				&:after {
+					content: '';
+					z-index: 2;
+					background-color: $purplish;
+					height: 2px;
+					width: 60%;
+					position: absolute;
+					top: -1px;
+					left: calc(40% / 2);
+
+					@include mQ(992px){
+						display: none;
+					}
+				}
+
+				.col {
+					position: relative;
+					text-align: center;
+
+					.number {
+						height: 30px;
+						width: 30px;
+						min-width: 30px;
+						text-align: center;
+						line-height: 30px;
+						background-color: $grey;
+						color: #fff;
+						font-size: 18px;
+						border-radius: 50%;
+						position: absolute;
+						top: -15px;
+						left: calc(50% - 15px);
+						z-index: 10;
+					}
+
+					.img {
+						width: 80px;
+						height: 80px;
+						margin: 20px auto;
+						margin-top: 40px;
+						background-color: $blue;
+					}
+
+					h4 {
+						color: $blue;
+					}
+
+					p {
+						color: $grey;
+					}
+				}
+			}
+		}
+
+		.team {
+			@extend %padding;
+			margin: 30px 0;
+
+			h2 {
+				font-weight: 700;
+				color: $blue;
+				text-align: center;
+			}
+
+			p {
+				font-size: 22px;
+				margin: 15px 0;
+				text-align: center;
+			}
+
+			.row {
+				margin: 0;
+				margin-top: 50px;
+
+				.col {
+					padding: 10px;
+					margin-bottom: 30px;
+
+					.card {
+						padding: 20px;
+						border: {
+							radius: 10px;
+							top: 5px solid $blue;
+						}
+
+						.img {
+							height: 120px;
+							width: 120px;
+							border-radius: 50%;
+							margin: 0 auto;
+							margin-top: -80px;
+							background-color: $blue;
+						}
+
+						h5 {
+							position: relative;
+							width: fit-content;
+							margin: 20px auto;
+
+							&:after {
+								content: '';
+								z-index: 2;
+								background-color: $blue;
+								height: 2px;
+								width: 80%;
+								position: absolute;
+								top: calc(100% + 10px);
+								left: 10%;
+							}					
+						}
+
+						p {
+							text-align: center;
+							line-height: 1;
+						}
+					}
+
+					&:nth-child(even){
+						.card {
+							border-color: $grey;
+						}
+
+						.img {
+							background-color: $grey;
+						}
+
+						h5:after {
+							background-color: $grey;
+						}
+					}
+				}
+			}
+		}
+
+		.learn {
+			padding: 5px;
+
+			.content {
+				background-color: $grey;
+				padding: 20px;
+
+				.btn {
+					background-color: $blue;
+					font-weight: 500;
+					color: #fff;
+					border-radius: 10px;
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+}

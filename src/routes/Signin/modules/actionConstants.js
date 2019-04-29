@@ -1,0 +1,2 @@
+export const SIGNIN_INPUT = 'SIGNIN_INPUT'
+export const SIGNIN_LOADING = 'SIGNIN_LOADING'

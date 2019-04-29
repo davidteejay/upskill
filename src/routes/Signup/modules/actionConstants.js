@@ -1,0 +1,2 @@
+export const SIGNUP_INPUT = 'SIGNUP_INPUT'
+export const SIGNUP_LOADING = 'SIGNUP_LOADING'
