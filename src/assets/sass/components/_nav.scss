@@ -23,6 +23,24 @@ nav {
 		}
 	}
 
+	.dropdown-content {
+		top: 50px !important;
+
+		li {
+			min-height: 40px !important;
+			height: 40px;
+			line-height: 40px;
+
+			a {
+				display: block !important;
+				text-align: left !important;
+				height: 100%;
+				width: 100%;
+				line-height: 30px;
+			}
+		}
+	}
+
 	.nav-wrapper {
 		display: flex;
 		align-items: center;
@@ -54,6 +72,11 @@ nav {
 					padding: 0;
 					text-align: center;
 
+					i {
+						display: inline;
+						margin-left: 5px;
+					}
+
 					&.signup {
 						color: #fff !important;
 						background-color: $blue !important;
@@ -63,6 +86,10 @@ nav {
 
 					&.active {
 						color: $blue !important;
+
+						i {
+							color: $blue !important;
+						}
 					}
 				}
 			}

@@ -115,7 +115,7 @@ export default class Home extends Component {
         <TopAds />
         <div className="header">
           <div className="header-content">
-            <Nav isHome />
+            <Nav active="home" />
             <div className="carousel-cover">
               <div className="carousel">
                 <a href="#!" className="carousel-item">
