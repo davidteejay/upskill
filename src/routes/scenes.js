@@ -10,6 +10,9 @@ const Home = React.lazy(() => import('./Home/containers/'))
 const News = React.lazy(() => import('./News/containers/'))
 const Signin = React.lazy(() => import('./Signin/containers/'))
 const Signup = React.lazy(() => import('./Signup/containers/'))
+const Explore = React.lazy(() => import('./Explore/containers/'))
+const Hub = React.lazy(() => import('./SkillHub/containers/'))
+
 const About = React.lazy(() =>import ('./About/components/'))
 
 const routes = [
@@ -18,6 +21,8 @@ const routes = [
   { path: '/signin', component: Signin, key: 'Signin' },
   { path: '/signup', component: Signup, key: 'Signup' },
   { path: '/about', component: About, key: 'About' },
+  { path: '/explore', component: Explore, key: 'Explore' },
+  { path: '/hub', component: Hub, key: 'Hub' },
 ]
 
 export default class App extends Component {

@@ -24,7 +24,7 @@ export default class Nav extends Component {
 	render(){
 		const { active } = this.props
 		return (
-			<nav className="white black-text z-depth-2">
+			<nav className="white black-text z-depth-1">
 				<div className="nav-wrapper">
 					<a href="/" className="logo-container">
 						Logo
