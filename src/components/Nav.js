@@ -56,13 +56,13 @@ export default class Nav extends Component {
 											<li><a href="#!">Trending Courses</a></li>
 											<li><a href="#!">Hire A Skill</a></li>
 											<li><a href="#!">Outsource A Job</a></li>
-											<li><a href="#!">My Profile</a></li>
+											<li><a href="/profile">My Profile</a></li>
 											<li><a href="#!">My Portfolio</a></li>
 											<li><a href="#!">Join A Community</a></li>
 											<li><a href="#!">Become A Partner</a></li>
 											<li><a href="#!">Become A Mentor</a></li>
 											<li><a href="#!">Become A Tutor</a></li>
-											<li><a href="#!">Testimonials</a></li>
+											<li><a href="/testimonies">Testimonials</a></li>
 										</ul>
 									</div>
 								</li>
@@ -77,13 +77,13 @@ export default class Nav extends Component {
 						<li><a href="#!">Trending Courses</a></li>
 						<li><a href="#!">Hire A Skill</a></li>
 						<li><a href="#!">Outsource A Job</a></li>
-						<li><a href="#!">My Profile</a></li>
+						<li><a href="/profile">My Profile</a></li>
 						<li><a href="#!">My Portfolio</a></li>
 						<li><a href="#!">Join A Community</a></li>
 						<li><a href="#!">Become A Partner</a></li>
 						<li><a href="#!">Become A Mentor</a></li>
 						<li><a href="#!">Become A Tutor</a></li>
-						<li><a href="#!">Testimonials</a></li>
+						<li><a href="/testimonies">Testimonials</a></li>
 					</ul>
 				</div>
 			</nav>

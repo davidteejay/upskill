@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'TW Cen MT';
+	src: url('../fonts/Tw Cen MT.ttf');
+}
+
+*:not(.material-icons) {
+	font-family: 'TW Cen MT', Roboto, sans-serif !important;
+	box-sizing: border-box !important;
+}
+
+@import 'utils/mixins';
+@import 'utils/vars';
+@import 'utils/padding';
+
+// @import 'pages/general';
+
+@import 'components/preloader';
+@import 'components/topAds';
+@import 'components/nav';
+@import 'components/footer';
