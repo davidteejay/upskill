@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import M from 'materialize-css'
 
 import TopAds from '../../../components/TopAds'
 import Nav from '../../../components/Nav'

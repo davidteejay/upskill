@@ -14,6 +14,7 @@ const Explore = React.lazy(() => import('./Explore/containers/'))
 const Hub = React.lazy(() => import('./SkillHub/containers/'))
 const Profile = React.lazy(() => import('./Profile/containers/'))
 const Testimonies = React.lazy(() => import('./Testimonies/containers/'))
+const Partner = React.lazy(() => import('./Partner/containers/'))
 
 const About = React.lazy(() =>import ('./About/components/'))
 
@@ -27,6 +28,7 @@ const routes = [
   { path: '/hub', component: Hub, key: 'Hub' },
   { path: '/profile', component: Profile, key: 'Profile' },
   { path: '/testimonies', component: Testimonies, key: 'Testimonies' },
+  { path: '/partner', component: Partner, key: 'Partner' },
 ]
 
 export default class App extends Component {
